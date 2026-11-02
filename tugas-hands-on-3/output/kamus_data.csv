@@ -1,0 +1,17 @@
+kolom,tipe,n_missing,n_unik,keterangan
+transaction_id,str,0,10000,ID transaksi (kunci unik)
+user_id,str,89,2893,ID pembeli (kosong dibiarkan NaN)
+product_id,str,0,500,ID produk
+kategori_produk,category,0,10,Kategori produk
+nama_produk,str,0,100,Nama produk (kosong -> 'Tidak Diketahui'; tidak konsisten per product_id)
+harga_idr,float64,298,9692,"Harga satuan (Rp), outlier IQR per kategori di-cap (tidak ada yang kena)"
+kuantitas,Int64,195,5,Jumlah barang (1-5)
+diskon_pct,int64,0,7,Diskon (%)
+rating_pembeli,float64,537,41,"Rating 1-5 (kosong dibiarkan NaN, diimputasi setelah split)"
+sentimen_ulasan,category,0,4,"Sentimen ulasan, label sudah dinormalkan; kosong -> 'Tidak Diketahui'"
+tanggal_pembelian,datetime64[us],187,1096,Tanggal transaksi (kosong dibiarkan NaT)
+metode_pembayaran,category,0,4,Metode pembayaran
+kota_pembeli,category,0,11,Kota pembeli (kosong -> 'Tidak Diketahui')
+status_retur,category,0,2,Status retur (Diretur / Tidak Diretur)
+total_nilai,float64,486,9512,Turunan: harga x kuantitas x (1 - diskon/100)
+retur,int8,0,2,"Turunan: target biner, 1 = Diretur"
